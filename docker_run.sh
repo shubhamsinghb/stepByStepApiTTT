@@ -5,6 +5,6 @@ set -x
 
 docker run \
   -v $(pwd)/config:/qaAutomation/config \
-  -e ENV=staging \
+  -e ENV=${ENVIRONMENT} \
   mydocker pytest \
   --color=yes
