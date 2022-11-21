@@ -4,4 +4,5 @@ report.html
 pytest.log
 utils/reporting_utils/pytest_report.log
 qaAutomation.egg-info/
+**/__pycache__/
 
