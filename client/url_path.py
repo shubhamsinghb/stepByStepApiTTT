@@ -1,3 +1,4 @@
 URL_PATH={
-    'auth':'auth'
+    'auth':'auth',
+    'booking':'booking'
 }

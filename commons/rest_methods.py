@@ -1,3 +1,5 @@
+import logging
+
 import requests
 
 from config.get_config import GetConfig
@@ -9,6 +11,7 @@ class RestMethods:
 
     def post(self, service, url_path, payload=None, headers=None):
         url = self.url(service, url_path)
+        logging.info(url)
         response = requests.post(url=url, data=payload, headers=headers)
         return response
 

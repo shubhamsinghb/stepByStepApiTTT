@@ -1,0 +1,3 @@
+test_create_booking:
+  - payload: {"firstname" : "Jim", "lastname" : "Brown", "totalprice" : 111, "depositpaid" : True, "bookingdates" : {"checkin" : "2022-11-27", "checkout" : "2022-11-29"}, "additionalneeds" : "Breakfast"}
+    response: {"bookingid":1572,"booking":{"firstname":"Jim","lastname":"Brown","totalprice":111,"depositpaid":True,"bookingdates":{"checkin":"2022-11-27","checkout":"2022-11-29"},"additionalneeds":"Breakfast"}}
