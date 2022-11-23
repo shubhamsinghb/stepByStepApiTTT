@@ -6,7 +6,7 @@ class GetConfig():
     env = os.environ.get('ENV')
 
     @staticmethod
-    def get_config():
+    def get_env_config():
         if GetConfig.env in ['staging', 'prod']:
             return CONFIG[GetConfig.env]
         elif GetConfig.env in None:
