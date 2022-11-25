@@ -7,6 +7,7 @@ class Headers:
 
     def set_json_header(self):
         self.headers["Content-Type"] = "application/json"
+        return self.headers
 
     def get_header(self):
         return self.headers

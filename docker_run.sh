@@ -1,7 +1,7 @@
-docker build -t mydocker .
+docker build -t dockerttt .
 
 docker run \
   -v $(pwd)/config:/qaAutomation/config \
-  -e ENV=${ENVIRONMENT} \
-  mydocker pytest \
+  -e ENV=staging \
+  dockerttt pytest \
   --color=yes

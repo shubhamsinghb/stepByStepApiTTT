@@ -1,6 +1,8 @@
 test_create_booking:
   - payload: {"firstname" : "Jim", "lastname" : "Brown", "totalprice" : 111, "depositpaid" : True, "bookingdates" : {"checkin" : "2022-11-27", "checkout" : "2022-11-29"}, "additionalneeds" : "Breakfast"}
     response: {"bookingid":1572,"booking":{"firstname":"Jim","lastname":"Brown","totalprice":111,"depositpaid":True,"bookingdates":{"checkin":"2022-11-27","checkout":"2022-11-29"},"additionalneeds":"Breakfast"}}
+    marks: "create_booking"
+    id: "create_booking"
 
 
 test_create_update_booking:
@@ -8,3 +10,5 @@ test_create_update_booking:
     response: {"bookingid":1572,"booking":{"firstname":"Jim","lastname":"Brown","totalprice":111,"depositpaid":True,"bookingdates":{"checkin":"2022-11-27","checkout":"2022-11-29"},"additionalneeds":"Breakfast"}}
     payload_update: {"firstname" : "James", "lastname" : "Brown", "totalprice" : 111, "depositpaid" : True, "bookingdates" : {"checkin" : "2022-11-27", "checkout" : "2022-11-29"}, "additionalneeds" : "Breakfast"}
     response_expected_update: {'firstname': 'James', 'lastname': 'Brown', 'totalprice': 111, 'depositpaid': True, 'bookingdates': {'checkin': '2022-11-27', 'checkout': '2022-11-29'}, 'additionalneeds': 'Breakfast'}
+    marks: "create_booking"
+    id: "create_booking"
