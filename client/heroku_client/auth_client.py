@@ -12,6 +12,5 @@ class AuthClient(BaseClient):
         logging.info('Auth get token api')
         url_path = URL_PATH['auth']
         headers=self.headers.set_json_header()
-        print(headers)
         response = self.rest_requests.post(self.service, url_path, payload, headers)
         return response.json(), response.status_code,response.text

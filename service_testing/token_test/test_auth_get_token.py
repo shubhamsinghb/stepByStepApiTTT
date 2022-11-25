@@ -15,6 +15,7 @@ def test_auth_token():
     assert status_code == 200
     logging.info("create token response is %s", response)
     assert isinstance(response['token'], str)
+    # database asserts
 
 
 def test_auth_token_with_entry():
@@ -23,3 +24,13 @@ def test_auth_token_with_entry():
     assert status_code == 200
     logging.info("create token response is %s", response)
     assert isinstance(response['token'], str)
+
+
+def test_auth_token_with_fixture(token_payload):
+    payload = token_payload(USER_DATA['USER_1']['USERNAME'], USER_DATA['USER_1']['PASSWORD'])
+
+    response, status_code, text = auth_client.auth_get_token(json.dumps(payload))
+    assert status_code == 200
+    logging.info("create token response is %s", response)
+    assert isinstance(response['token'], str)
+    # database asserts

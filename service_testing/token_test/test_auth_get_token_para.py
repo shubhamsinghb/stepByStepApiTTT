@@ -4,6 +4,7 @@ import logging
 import pytest
 
 from client.heroku_client.auth_client import AuthClient
+from data_objects.request_entry.auth_entry import AuthRequestEntry
 
 auth_client = AuthClient()
 
@@ -65,13 +66,8 @@ def test_auth_token_para_negative_2(username, password, message):
                           pytest.param("", "", "Bad credentials", marks= pytest.mark.empty_user_password),
                           ], ids=['worng password', 'wrong user', 'empty password an user'])
 def test_auth_token_para_negative_3(username, password, message):
-    payload = {
-        "username": username,
-        "password": password
-    }
-    logging.info(json.dumps(payload))
-
-    response, status_code, text = auth_client.auth_get_token(json.dumps(payload))
+    payload = AuthRequestEntry(username, password)
+    response, status_code, text = auth_client.auth_get_token(json.dumps(payload.__dict__))
     assert status_code == 200
     logging.info("create token response is %s", response)
     assert response['reason'] == message

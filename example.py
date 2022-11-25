@@ -3,9 +3,6 @@ import textwrap
 
 import requests
 
-url = "https://restful-booker.herokuapp.com/auth"
-
-header = {'Content-Type': 'application/json'}
 
 
 def print_roundtrip(response, *args, **kwargs):
@@ -29,11 +26,16 @@ def print_roundtrip(response, *args, **kwargs):
     ))
 
 
-payload = {
-    "username": "admin",
-    "password": "password123"
-}
-print(isinstance(header, dict))
-response = requests.post(url, data=json.dumps(payload), headers=header, hooks={'response': print_roundtrip})
+def test_if():
+    url = "https://restful-booker.herokuapp.com/auth"
 
-print(response)
+    header = {'Content-Type': 'application/json'}
+
+    payload = {
+        "username": "admin",
+        "password": "password123"
+    }
+    print(isinstance(header, dict))
+    response = requests.post(url, data=json.dumps(payload), headers=header, hooks={'response': print_roundtrip})
+
+    print(response)
