@@ -3,7 +3,7 @@ import parametrize_from_file
 import logging
 
 from client.heroku_client.create_booking_client import CreateBookingClient
-from util.response_utils import ResponseUtils
+from utils.response_utils import ResponseUtils
 
 createBookingClient = CreateBookingClient()
 
