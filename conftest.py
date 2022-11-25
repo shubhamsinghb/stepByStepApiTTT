@@ -41,6 +41,7 @@ def pytest_sessionfinish(session):
                 f':red_circle: List failed test \n{failed}'
 
     }
-    token= 'Bearer ' + os.environ.get("SLACK_AUTH_TOKEN_QA")
-    response = SlackClient.slack_post_with_auth(payload=json.dumps(message),
-                                                auth=token)
+    if os.environ.get("SLACK_AUTH_TOKEN_QA") is not None:
+        token= 'Bearer ' + os.environ.get("SLACK_AUTH_TOKEN_QA")
+        response = SlackClient.slack_post_with_auth(payload=json.dumps(message),
+                                                    auth=token)
