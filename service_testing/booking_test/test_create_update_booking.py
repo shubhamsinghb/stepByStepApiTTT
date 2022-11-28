@@ -11,6 +11,7 @@ createBookingClient = CreateBookingClient()
 @parametrize_from_file(path='../test_data/create_update_booking.yaml')
 def test_create_booking(payload, response):
     response_expected, status_code, response_text = createBookingClient.create_booking(json.dumps(payload))
+    print(response_expected)
     assert ResponseUtils.assert_response_jsons(response, response_expected, fields_ignored=
     "root['bookingid']")
 
