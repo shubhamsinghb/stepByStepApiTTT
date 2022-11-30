@@ -11,6 +11,7 @@ setup(name= 'stepByStepApiTTT',
           "requests==2.28.1",
           "parametrize_from_file==0.17.0",
           "deepdiff==5.8.1",
+          "pytz==2022.6"
       ]
 
 )
